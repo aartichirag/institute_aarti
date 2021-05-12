@@ -1,0 +1,37 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <table class="table table-danger">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>description</th>
+                <th>duration</th>
+                <th>fees</th>
+                <th>status</th>
+                <th>user</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{object.name}}</td>
+                <td>{{object.description}}</td>
+                <td>{{object.duration}}</td>
+                <td>{{object.fees}}</td>
+                <td>{{object.status}}</td>
+                <td>{{object.user}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3> Are you sure you want to delete??</h3>
+
+    <input type="submit" value="delete" class="btn btn-danger waves-effect">
+    <a href="{% url 'course-view'%}"><input type="cancel" value="cancel" class="btn btn-danger waves-effect"></a>
+
+
+    </form>
+
+{% endblock %}

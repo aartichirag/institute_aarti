@@ -1,0 +1,216 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% load crispy_forms_field %}
+
+{% block extra_head_js_lib %}
+    <!-- Sweet Alert Css -->
+    <link href="{% static 'plugins/sweetalert/sweetalert.css' %}" rel="stylesheet" />
+
+    <!-- Bootstrap Select Css -->
+    <link href="{% static 'plugins/bootstrap-select/css/bootstrap-select.css' %}" rel="stylesheet" />
+
+        <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="{% static 'plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css' %}" rel="stylesheet" />
+
+    <!-- Bootstrap DatePicker Css -->
+    <link href="{% static 'plugins/bootstrap-datepicker/css/bootstrap-datepicker.css' %}" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="{% static 'plugins/waitme/waitMe.css' %}" rel="stylesheet" />
+
+{% endblock %}
+{% block body %}
+<div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>Payment Detail Form</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <form id="form_validation" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+                                {% csrf_token %}
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label class="form-label">Receipt</label>
+                                        {% crispy_field form.receipt %}
+                                    </div>
+                                    {% if form.receipt.errors %}
+                                        {% for error in form.receipt.errors %}
+                                            <label id="receipt-error" class="error" for="receipt"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        {% crispy_field form.receipt_date 'id' 'rdate' 'placeholder' 'Receipt Date' %}
+                                    </div>
+                                    {% if form.receipt_date.errors %}
+                                        {% for error in form.receipt_date.errors %}
+                                            <label id="receipt_date-error" class="error" ><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label class="form-label">Amount</label>
+                                        {% crispy_field form.amount %}
+                                    </div>
+                                    {% if form.amount.errors %}
+                                        {% for error in form.amount.errors %}
+                                            <label id="amount-error" class="error" for="amount"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <p>
+                                          <b>Type</b>
+                                        </p>
+                                        {% crispy_field form.type 'class' 'btn-group bootstrap-select form-control show-tick' %}
+                                    </div>
+                                    {% if form.type.errors %}
+                                        {% for type in form.type.errors %}
+                                            <label id="type-error" class="error" for="type"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group form-float" id="chaque_no" style="display : none">
+                                    <div class="form-line">
+                                        <label class="form-label">Chaque No</label>
+                                        {% crispy_field form.chaque_no %}
+                                    </div>
+                                    {% if form.chaque_no.errors %}
+                                        {% for error in form.chaque_no.errors %}
+                                            <label id="chaque_no-error" class="error" for="chaque_no"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                 <div class="form-group form-float" id="bankname" style="display : none">
+                                    <div class="form-line">
+                                        <label class="form-label">Bank Name</label>
+                                        {% crispy_field form.bank_name %}
+                                    </div>
+                                    {% if form.bank_name.errors %}
+                                        {% for error in form.bank_name.errors %}
+                                            <label id="bank_name-error" class="error" for="bank_name"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group form-float" id="branchname" style="display : none">
+                                    <div class="form-line">
+                                        <label class="form-label">Branch Name</label>
+                                        {% crispy_field form.branch_name  %}
+                                    </div>
+                                    {% if form.branch_name.errors %}
+                                        {% for error in form.branch_name.errors %}
+                                            <label id="branch_name-error" class="error" for="branch_name"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group form-float" id="chaquedate" style="display : none">
+                                    <div class="form-line">
+                                        <p>
+                                          <b>Chaque Date</b>
+                                        </p>
+                                        {% crispy_field form.chaque_date 'id' 'cdate' 'placeholder' 'Chaque Date' %}
+                                    </div>
+                                    {% if form.chaque_date.errors %}
+                                        {% for error in form.chaque_date.errors %}
+                                            <label id="chaque_date-error" class="error" ><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+<!--                                        <label class="form-label">Addmission</label>-->
+                                        <p>
+                                          <b>Addmission</b>
+                                        </p>
+                                        {% crispy_field form.addmission 'data-live-search' 'true'  %}
+                                    </div>
+                                    {% if form.addmission.errors %}
+                                        {% for error in form.addmission.errors %}
+                                            <label id="addmission-error" class="error" for="addmission"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+
+                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+{% block extra_js_lib %}
+     <!-- Jquery Validation Plugin Css -->
+    <script src="{% static 'plugins/jquery-validation/jquery.validate.js' %}"></script>
+
+    <!-- JQuery Steps Plugin Js -->
+    <script src="{% static 'plugins/jquery-steps/jquery.steps.js' %}"></script>
+
+    <!-- Sweet Alert Plugin Js -->
+    <script src="{% static 'plugins/sweetalert/sweetalert.min.js' %}"></script>
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/forms/form-validation.js' %}"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="{% static 'plugins/autosize/autosize.js' %}"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="{% static 'plugins/momentjs/moment.js' %}"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js' %}"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/forms/basic-form-elements.js' %}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector("#id_type"),onchange=function()
+        {
+            console.log("select function called")
+            if(document.querySelector("#id_type").value==='Cash'){
+                console.log('if condition cash is selected');
+                document.querySelector("#chaque_no").style.display="none";
+                document.querySelector("#bankname").style.display="none";
+                document.querySelector("#branchname").style.display="none";
+                document.querySelector("#chaquedate").style.display="none";
+            }
+           else
+           {
+                 document.querySelector("#chaque_no").style.display="block";
+                 document.querySelector("#bankname").style.display="block";
+                 document.querySelector("#branchname").style.display="block";
+                 document.querySelector("#chaquedate").style.display="block";
+
+           }
+
+        }
+    })
+</script>
+
+<script>
+    $('#rdate').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+    $('#cdate').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+</script>
+{% endblock %}

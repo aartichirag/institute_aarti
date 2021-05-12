@@ -1,0 +1,186 @@
+﻿{% extends 'users/layout.html' %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block extra_head_js_lib %}
+
+
+{% endblock %}
+{% block body %}
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{{ inquiry_details.photo.url }}" alt="AdminBSB - Profile Image" height="100px"  />
+                            </div>
+                            {% for inquiry in inquiries %}
+                            <div class="content-area">
+                                <h3>{{inquiry.inquiry_date }}</h3>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="profile-footer">
+                            <ul>
+                                <li>
+                                    <span>First Name</span>
+                                    <span>{{inquiry_details.first_name}}</span>
+                                </li>
+                                <li>
+                                    <span>Mobile Number</span>
+                                    <span>{{ inquiry_details.mobile_number }}</span>
+                                </li>
+                                 <li>
+                                    <span>Education</span>
+                                    <span>{{ inquiry_details.education }}</span>
+                                 </li>
+                                <li>
+                                    <span>Course</span>
+                                    <span>
+                                    {% for course in inquiry_details.course.all %}
+                                        {{ course.name }} ,
+                                    {% endfor %}
+                                    </span>
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-lg waves-effect btn-block">FOLLOW</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="card">
+                        <div class="body">
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab"><h4><b>Inquiry Detail</b></h4></a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                        <div class="panel panel-default panel-post">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade in" id="profile_settings">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">First Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.first_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Second Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.second_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Last Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.last_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">St.Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.st_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Area Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.area_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Phone Number(house)</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.phone_number_house }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">College Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.college_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Referance Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.referance_name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Remarks</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.remarks }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Inquiry Held By</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.inquiry_held_by }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Inquiry Institute Phone</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.inquiry_institute_phone }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Demo Lecture Date</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.demo_lecture_date }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Demo Lecture Time</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ inquiry_details.demo_lecture_time }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block extra_js_lib %}
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/examples/profile.js' %}"></script>
+
+{% endblock %}

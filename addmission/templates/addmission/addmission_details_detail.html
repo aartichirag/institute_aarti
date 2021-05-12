@@ -1,0 +1,189 @@
+{% extends 'users/layout.html' %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-3">
+                <div class="card profile-card">
+                    <div class="profile-header">&nbsp;</div>
+                    <div class="profile-body">
+                        <div class="image-area">
+                            <img src="{{ addmission_details.student.photo.url }}" alt="AdminBSB - Profile Image" height="100px"  />
+                        </div>
+                        {% for addmission in addmissions %}
+                        <div class="content-area">
+                            <h3>{{addmission.student }}</h3>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="profile-footer">
+                        <ul>
+                            <li>
+                                <span>Student</span>
+                                <span>{{addmission_details.student}}</span>
+                            </li>
+                            <li>
+                                <span>Date of Addmission</span>
+                                <span>{{ addmission_details.date_of_addmission }}</span>
+                            </li>
+                            <li>
+                                <span>course</span>
+                                <span>{{ addmission_details.course }}</span>
+                            </li>
+                            <li>
+                                <span>Fees</span>
+                                <span>{{ addmission_details.fees }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <div class="card">
+                    <div class="body">
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation"><a href="#home" aria-controls="settings" role="tab" data-toggle="tab"><h4><b>Student Addmission Personal Detail</b></h4></a></li>
+                                <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab"><h4><b>Payment Details</b></h4></a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                    <div class="panel panel-default panel-post">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Start Time</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.start_time }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">End Time</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.end_time }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Start Date</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.start_date }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">End Date</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.end_date }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Scan Copy Of Id Proof</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.scan_copy_of_id_proof }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Fees</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.fees }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Status</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.status }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Student</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.student }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">No Of Days</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.no_of_days }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Remarks</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.remarks }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Pending Fees</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.pending_fees }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Inquiry</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ addmission_details.inquiry }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </form>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade active in" id="profile_settings">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Reciept Id</th>
+                                                    <th>Reciept Date</th>
+                                                    <th>Payment Type</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for pay in addmission_details.payment.all %}
+                                                <tr>
+                                                    <td>{{pay.id}}</td>
+                                                    <td>{{pay.receipt_date}}</td>
+                                                    <td>{{pay.type}}</td>
+                                                    <td>{{pay.amount}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js_lib %}
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/examples/profile.js' %}"></script>
+
+{% endblock %}

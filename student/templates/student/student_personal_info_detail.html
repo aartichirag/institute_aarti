@@ -1,0 +1,244 @@
+﻿{% extends 'users/layout.html' %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block extra_head_js_lib %}
+
+
+{% endblock %}
+{% block body %}
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{{ student_personal_info.photo.url }}" alt="AdminBSB - Profile Image" height="100px"  />
+                            </div>
+                            {% for student in students %}
+                            <div class="content-area">
+                                <h3>{{student.student_first_name }}</h3>
+<!--                                <p>Web Software Developer</p>-->
+<!--                                <p>Administrator</p>-->
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="profile-footer">
+                            <ul>
+                                <li>
+                                    <span>Student Name</span>
+                                    <span>{{student_personal_info.student_first_name}}</span>
+                                </li>
+                                <li>
+                                    <span>Birth Date</span>
+                                    <span>{{ student_personal_info.birthdate }}</span>
+                                </li>
+                                 <li>
+                                    <span>Mobile Number</span>
+                                    <span>{{ student_personal_info.mobile_number }}</span>
+                                </li>
+                                <li>
+                                    <span>Email Id</span>
+                                    <span>{{ student_personal_info.email_id }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="card">
+                        <div class="body">
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab"><h4><b>Student Personal Information</b></h4></a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                        <div class="panel panel-default panel-post">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade in" id="profile_settings">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Student First Name</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.student_first_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Student Last Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.student_last_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="InputExperience" class="col-sm-2 control-label">Student Second Name</label>-->
+
+<!--                                                <div class="col-sm-10">-->
+<!--                                                    <div class="form-line">-->
+<!--                                                        {{ student_personal_info.student_second_name }}-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Father First Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.father_first_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="InputExperience" class="col-sm-2 control-label">Father Second Name</label>-->
+
+<!--                                                <div class="col-sm-10">-->
+<!--                                                    <div class="form-line">-->
+<!--                                                        {{ student_personal_info.father_second_name }}-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Father Last Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.father_last_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">House No Or Building Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.houseno_building_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">St. Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.st_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Area Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.area_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">City Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.city_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Country Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.country_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Phone Number(House)</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.phone_number_house }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">School Name Or College Name</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.school_college_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Education</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.education }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Photo</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.photo }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Biomatric Data</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.biomatric_data }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Inquiry Id</label>
+
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ student_personal_info.inquiry_id }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+<!--                                            <div class="form-group">-->
+<!--                                                <div class="col-sm-offset-2 col-sm-10">-->
+<!--                                                    <button type="submit" class="btn btn-danger">SUBMIT</button>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+                                        </form>
+                                    </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+{% block extra_js_lib %}
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/examples/profile.js' %}"></script>
+
+{% endblock %}
