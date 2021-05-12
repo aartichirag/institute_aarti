@@ -45,7 +45,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <label class="form-label">Description</label>
-                                        {% crispy_field form.description %}
+                                        {% crispy_field form.description 'id' 'ckeditor' %}
                                     </div>
                                     {% if form.description.errors %}
                                         {% for error in form.description.errors %}
@@ -125,5 +125,14 @@
 
     <!-- Custom Js -->
     <script src="{% static 'js/pages/forms/form-validation.js' %}"></script>
+
+     <!-- Ckeditor -->
+    <script src="{% static 'plugins/ckeditor/ckeditor.js' %}"></script>
+
+    <!-- TinyMCE -->
+    <script src="{% static 'plugins/tinymce/tinymce.js' %}"></script>
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/forms/editors.js' %}"></script>
 
 {% endblock %}
