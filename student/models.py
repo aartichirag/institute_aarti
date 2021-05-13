@@ -24,7 +24,7 @@ class student_personal_info(models.Model):
     photo=models.ImageField(upload_to='images')
     biomatric_data=models.CharField(max_length=30)
     email_id=models.CharField(max_length=30)
-    inquiry_id=models.IntegerField(blank=True)
+    inquiry_id=models.IntegerField(blank=True,null=True)
 
     def __str__(self):
         return f"{self.student_first_name}"

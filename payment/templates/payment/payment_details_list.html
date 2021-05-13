@@ -33,7 +33,7 @@
                             <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
                                 <thead>
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Receipt</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Id</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 303px;">Receipt Date</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 139px;">Amount</th>
                                         <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68px;">Type</th>
@@ -47,7 +47,7 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th rowspan="1" colspan="1">Receipt</th>
+                                        <th rowspan="1" colspan="1">Id</th>
                                         <th rowspan="1" colspan="1">Receipt Date</th>
                                         <th rowspan="1" colspan="1">Amount</th>
                                         <th rowspan="1" colspan="1">Type</th>
@@ -62,7 +62,7 @@
                                 <tbody>
                                     {% for payment in payments %}
                                         <tr>
-                                            <td>{{ payment.receipt }}</td>
+                                            <td>{{ payment.id }}</td>
                                             <td>{{ payment.receipt_date }}</td>
                                             <td>{{ payment.amount }}</td>
                                             <td>{{ payment.type }}</td>

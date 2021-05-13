@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Description</label>
+<!--                                        <label class="form-label">Description</label>-->
                                         {% crispy_field form.description 'id' 'ckeditor' %}
                                     </div>
                                     {% if form.description.errors %}
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Duration</label>
+                                        <label class="form-label">Duration in Month</label>
                                         {% crispy_field form.duration %}
                                     </div>
                                     {% if form.duration.errors %}

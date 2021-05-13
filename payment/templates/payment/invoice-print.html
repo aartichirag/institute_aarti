@@ -33,9 +33,9 @@
         From
         <address>
           <strong>Arham Computer Institute</strong><br>
-          101,Patrakar Colony Road<br>
-          Naranpura, Ahmedabad 382150<br>
-          Phone: (+91) 8723445690<br>
+          39/231,Vijaynagar,Vijaynagar High School<br>
+          Naranpura, Ahmedabad - 390013<br>
+          Phone: (+91) 9558969555<br>
           Email: arham@gmail.com
         </address>
       </div>
@@ -55,7 +55,7 @@
       <div class="col-sm-4 invoice-col">
         <!--<b>Invoice #007612</b><br>-->
         <br>
-        <b>Receipt ID:</b> {{object.receipt}}<br>
+        <b>Receipt ID:</b> {{object.id}}<br>
         <b>Receipt Date:</b> {{object.receipt_date}}<br>
         <b>Addmission ID:</b> {{object.addmission}}
       </div>
@@ -70,7 +70,8 @@
         <table class="table table-striped">
           <thead>
           <tr>
-            <th>Receipt</th>
+            <th>Id</th>
+            <th>Course Name</th>
             <th>Amount</th>
             <th>Type</th>
             <th>Chaque No</th>
@@ -81,7 +82,8 @@
           </thead>
           <tbody>
           <tr>
-            <td>{{object.receipt}}</td>
+            <td>{{object.id}}</td>
+            <td>{{object.addmission.course}}</td>
             <td>{{object.amount}}</td>
             <td>{{object.type}}</td>
             <td>{{object.chaque_no}}</td>

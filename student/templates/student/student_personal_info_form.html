@@ -19,6 +19,25 @@
     <!-- Bootstrap Select Css -->
     <link href="{% static 'plugins/bootstrap-select/css/bootstrap-select.css' %}" rel="stylesheet" />
 
+    <!-- Colorpicker Css -->
+    <link href="{% static 'plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css' %}" rel="stylesheet" />
+
+    <!-- Dropzone Css -->
+    <link href="{% static 'plugins/dropzone/dropzone.css' %}" rel="stylesheet">
+
+    <!-- Multi Select Css -->
+    <link href="{% static 'plugins/multi-select/css/multi-select.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap Spinner Css -->
+    <link href="{% static 'plugins/jquery-spinner/css/bootstrap-spinner.css'%}" rel="stylesheet">
+
+    <!-- Bootstrap Tagsinput Css -->
+    <link href="{% static 'plugins/bootstrap-tagsinput/bootstrap-tagsinput.css' %}" rel="stylesheet">
+
+    <!-- noUISlider Css -->
+    <link href="{% static 'plugins/nouislider/nouislider.min.css' %}" rel="stylesheet" />
+
+
 {% endblock %}
 {% block body %}
 <div class="row clearfix">
@@ -166,7 +185,7 @@
                                  <div class="form-group form-float">
                                     <div class="form-line">
                                         <label class="form-label">Mobile Number</label>
-                                        {% crispy_field form.mobile_number %}
+                                        {% crispy_field form.mobile_number 'class' 'mobile-phone-number' 'placeholder' '+00 (000) 000-00-00' %}
                                     </div>
                                     {% if form.mobile_number.errors %}
                                         {% for error in form.mobile_number.errors %}
@@ -313,6 +332,28 @@
 
     <!-- Custom Js -->
     <script src="{% static 'js/pages/forms/basic-form-elements.js' %}"></script>
+    <script src="{% static 'js/pages/forms/advanced-form-elements.js' %}"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="{% static 'plugins/jquery-inputmask/jquery.inputmask.bundle.js' %}"></script>
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="{% static 'plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js' %}"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="{% static 'plugins/dropzone/dropzone.js' %}"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="{% static 'plugins/multi-select/js/jquery.multi-select.js' %}"></script>
+
+    <!-- Jquery Spinner Plugin Js -->
+    <script src="{% static 'plugins/jquery-spinner/js/jquery.spinner.js'%}"></script>
+
+    <!-- Bootstrap Tags Input Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="{% static 'plugins/nouislider/nouislider.js' %}"></script>
 
 <script>
     $('#bdate').bootstrapMaterialDatePicker({ weekStart : 0, time: false });

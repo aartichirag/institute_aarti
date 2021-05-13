@@ -59,7 +59,7 @@
                                             <tr>
                                                 <td>{{course.id}}</td>
                                                 <td>{{ course.name }}</td>
-                                                <td>{{ course.description }}</td>
+                                                <td>{{ course.description|safe }}</td>
                                                 <td>{{ course.duration }}</td>
                                                 <td>{{ course.fees }}</td>
                                                 <td>{{course.status }}</td>

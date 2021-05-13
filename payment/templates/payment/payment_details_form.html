@@ -43,18 +43,6 @@
                                 {% csrf_token %}
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Receipt</label>
-                                        {% crispy_field form.receipt %}
-                                    </div>
-                                    {% if form.receipt.errors %}
-                                        {% for error in form.receipt.errors %}
-                                            <label id="receipt-error" class="error" for="receipt"><b>{{ error }}</b></label>
-                                        {% endfor %}
-                                    {% endif %}
-                                </div>
-
-                                <div class="form-group form-float">
-                                    <div class="form-line">
                                         {% crispy_field form.receipt_date 'id' 'rdate' 'placeholder' 'Receipt Date' %}
                                     </div>
                                     {% if form.receipt_date.errors %}
@@ -77,7 +65,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <p>
-                                          <b>Type</b>
+                                          <b>Payment Type</b>
                                         </p>
                                         {% crispy_field form.type 'class' 'btn-group bootstrap-select form-control show-tick' %}
                                     </div>

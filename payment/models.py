@@ -3,7 +3,6 @@ from django.urls import reverse
 
 # Create your models here.
 class payment_details(models.Model):
-    receipt=models.IntegerField()
     receipt_date=models.DateField()
     amount=models.IntegerField()
     type=models.CharField(max_length=10, choices=[('Cash','Cash'),('Chaque', 'Chaque')])

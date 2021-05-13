@@ -82,7 +82,7 @@
                                 </div>
                                  <div class="form-group form-float">
                                     <div class="form-line">
-                                        {% crispy_field form.start_time 'class' 'timepicker' 'placeholder' 'Start Time' %}
+                                        {% crispy_field form.start_time 'class' 'timepicker' 'placeholder' 'Lecture Start Time' %}
                                     </div>
                                     {% if form.start_time.errors %}
                                         {% for error in form.start_time.errors %}
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        {% crispy_field form.end_time 'class' 'timepicker' 'placeholder' 'End Time'%}
+                                        {% crispy_field form.end_time 'class' 'timepicker' 'placeholder' 'Lecture End Time'%}
                                     </div>
                                     {% if form.end_time.errors %}
                                         {% for error in form.end_time.errors %}
@@ -103,7 +103,7 @@
 
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        {% crispy_field form.start_date 'id' 'sdate' 'placeholder' 'Start Date' %}
+                                        {% crispy_field form.start_date 'id' 'sdate' 'placeholder' 'Course Start Date' %}
                                     </div>
                                     {% if form.start_date.errors %}
                                         {% for error in form.start_date.errors %}
@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        {% crispy_field form.end_date 'id' 'edate' 'placeholder' 'End Date' %}
+                                        {% crispy_field form.end_date 'id' 'edate' 'placeholder' 'Course End Date' %}
                                     </div>
                                     {% if form.end_date.errors %}
                                         {% for error in form.end_date.errors %}
