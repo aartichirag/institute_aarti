@@ -6,6 +6,9 @@
         {% csrf_token %}
          <h1>Welcome to Arham Computer Institute {{user.username}}</h1>
     </form>
+
+    <img src="{% static 'images/MT-image2.png'%}" alt="Not Available" width="900px" height="300px">
+
     &nbsp;&nbsp;
     <div class="container-fluid">
         <!-- Widgets -->
@@ -67,5 +70,4 @@
             </div>
         </div>
     </div>
-     <img src="{% static 'images/img9.png'%}" alt="Not Available" width="800px">
 {% endblock %}

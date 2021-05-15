@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import MinValueValidator
 
 
 # Create your models here.
@@ -24,7 +25,7 @@ class student_personal_info(models.Model):
     photo=models.ImageField(upload_to='images')
     biomatric_data=models.CharField(max_length=30)
     email_id=models.CharField(max_length=30)
-    inquiry_id=models.IntegerField(blank=True,null=True)
+    inquiry_id=models.IntegerField(blank=True,null=True,validators=[MinValueValidator(0,"Id should not be negative")])
 
     def __str__(self):
         return f"{self.student_first_name}"

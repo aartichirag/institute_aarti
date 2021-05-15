@@ -28,7 +28,7 @@ class UpdatePayment(UpdateView):
 
 class DetailPayment(DetailView):
     model = payment_details
-    template_name = 'payment/invoice-print.html'
+    template_name = 'payment/new_invoice.html'
 
 class DeletePayment(DeleteView):
     model = payment_details
