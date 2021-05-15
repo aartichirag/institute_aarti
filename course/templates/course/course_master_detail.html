@@ -1,0 +1,98 @@
+﻿{% extends 'users/layout.html' %}
+{% load static %}
+{% load crispy_forms_field %}
+{% block extra_head_js_lib %}
+
+
+{% endblock %}
+{% block body %}
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="card profile-card">
+                        <div class="profile-header">&nbsp;</div>
+                        <div class="profile-body">
+                            <div class="image-area">
+                                <img src="{{ course_master.photo.url }}" alt="AdminBSB - Profile Image" height="100px"  />
+                            </div>
+                            {% for course in courses %}
+                            <div class="content-area">
+                                <h3>{{course.id }}</h3>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="profile-footer">
+                            <ul>
+                                <li>
+                                    <span>Course Name</span>
+                                    <span>{{course_master.name}}</span>
+                                </li>
+                                <li>
+                                    <span>Duration</span>
+                                    <span>{{ course_master.duration }}</span>
+                                </li>
+                                 <li>
+                                    <span>Fees</span>
+                                    <span>{{ course_master.fees }}</span>
+                                 </li>
+                            </ul>
+<!--                            <button class="btn btn-primary btn-lg waves-effect btn-block">FOLLOW</button>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="card">
+                        <div class="body">
+                            <div>
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab"><h4><b>Course Detail</b></h4></a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                        <div class="panel panel-default panel-post">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade in" id="profile_settings">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Course Name</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ course_master.name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">Description</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ course_master.description |safe }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">status</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-line">
+                                                    {{ course_master.status }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+{% block extra_js_lib %}
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/examples/profile.js' %}"></script>
+
+{% endblock %}

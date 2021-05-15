@@ -12,6 +12,8 @@ class ViewCourse(ListView):
     model = course_master
     context_object_name = 'courses'
 
+class DetailCourse(DetailView):
+    model = course_master
 
 class UpdateCourse(UpdateView):
     model = course_master

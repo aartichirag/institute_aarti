@@ -35,8 +35,8 @@
                                         <tr role="row">
                                             <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Id</th>
                                             <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Course Name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 303px;">Description</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 139px;">Duration</th>
+<!--                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 303px;">Description</th>-->
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 139px;">Duration(in month)</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68px;">Fees</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Status</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Action</th>
@@ -46,12 +46,11 @@
                                         <tr>
                                             <th rowspan="1" colspan="1">ID</th>
                                             <th rowspan="1" colspan="1"> Course Name</th>
-                                            <th rowspan="1" colspan="1">Description</th>
-                                            <th rowspan="1" colspan="1">Duration</th>
+<!--                                            <th rowspan="1" colspan="1">Description</th>-->
+                                            <th rowspan="1" colspan="1">Duration(in month)</th>
                                             <th rowspan="1" colspan="1">Fees</th>
                                             <th rowspan="1" colspan="1">Status</th>
                                             <th rowspan="1" colspan="1">Action</th>
-
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -59,12 +58,14 @@
                                             <tr>
                                                 <td>{{course.id}}</td>
                                                 <td>{{ course.name }}</td>
-                                                <td>{{ course.description|safe }}</td>
+<!--                                                <td>{{ course.description|safe }}</td>-->
                                                 <td>{{ course.duration }}</td>
                                                 <td>{{ course.fees }}</td>
                                                 <td>{{course.status }}</td>
+                                                <td>{{course.action}}</td>
                                                 <td>
-                                                    <a href="{% url 'course-update' course.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>&nbsp;
+                                                    <a href="{% url 'course-update' course.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>
+                                                    <a href="{% url 'course-detail' course.id %}"><div class="demo-google-material-icon"> <i class="material-icons">details</i> <span class="icon-name">details</span> </div></a>
                                                     <a href="{% url 'course-delete' course.id %}"><div class="demo-google-material-icon"> <i class="material-icons">delete</i> <span class="icon-name">delete</span> </div></a>
                                                 </td>
                                             </tr>
