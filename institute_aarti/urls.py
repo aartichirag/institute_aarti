@@ -28,6 +28,7 @@ urlpatterns = [
     path("payment/",include("payment.urls")),
     path("inquiry/",include("inquiry.urls")),
     path("chart/",include("chart.urls")),
+    path("certificate/",include("certificate.urls")),
     path('',LoginView.as_view(template_name="users/sign-in.html",success_url="/home/"),name="login"),
     path('logout/',LogoutView.as_view(template_name="users/sign-up.html"),name="logout")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

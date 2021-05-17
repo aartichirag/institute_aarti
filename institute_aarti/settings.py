@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'payment',
     'inquiry',
     'chart',
+    'certificate',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
