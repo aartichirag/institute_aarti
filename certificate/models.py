@@ -3,6 +3,7 @@ from django.urls import reverse
 from addmission.models import addmission_details
 from django.core.validators import FileExtensionValidator
 
+
 # Create your models here.
 class certificate(models.Model):
     date=models.DateField()
@@ -10,7 +11,7 @@ class certificate(models.Model):
     photo=models.ImageField(upload_to='images', blank=True,validators=[FileExtensionValidator(['jpg','png','jpeg'],"File extension is invalid")])
 
     def __str__(self):
-        return f"{self.addmission}"
+        return f"{self.date}-{self.addmission}"
 
     def get_absolute_url(self):
-        return reverse('certifiacate-view')
+        return reverse('certificate-view')

@@ -86,7 +86,7 @@
                                                 <i class="material-icons">add_shopping_cart</i>
                                             </div>
                                             <div class="menu-info">
-                                                <h4>4 sales made</h4>
+                                                <h4>sales made</h4>
                                                 <p>
                                                     <i class="material-icons">access_time</i> 22 mins ago
                                                 </p>
@@ -376,35 +376,7 @@
 <!--                            </li>-->
 <!--                        </ul>-->
 <!--                    </li>-->
-<!--                    <li class="active">-->
-<!--                        <a href="javascript:void(0);" class="menu-toggle">-->
-<!--                            <i class="material-icons">content_copy</i>-->
-<!--                            <span>Example Pages</span>-->
-<!--                        </a>-->
-<!--                        <ul class="ml-menu">-->
-<!--                            <li>-->
-<!--                                <a href="../../pages/examples/profile.html">Profile</a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="../../pages/examples/sign-in.html">Sign In</a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="../../pages/examples/sign-up.html">Sign Up</a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="../../pages/examples/forgot-password.html">Forgot Password</a>-->
-<!--                            </li>-->
-<!--                            <li class="active">-->
-<!--                                <a href="../../pages/examples/blank.html">Blank Page</a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="../../pages/examples/404.html">404 - Not Found</a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href="../../pages/examples/500.html">500 - Server Error</a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
+
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
 <!--                            <i class="material-icons">map</i>-->
@@ -416,6 +388,20 @@
                             </li>
                             <li>
                                 <a href="{% url 'inquiry-view'%}">View Inquiry</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+<!--                            <i class="material-icons">map</i>-->
+                            <div class="demo-google-material-icon"> <i class="material-icons">find_in_page</i> <span class="icon-name">Certificate</span></div>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{% url 'certificate-new'%}">New Certificate</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'certificate-view'%}">View Certificate</a>
                             </li>
                         </ul>
                     </li>
