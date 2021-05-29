@@ -4,6 +4,7 @@ from addmission.models import addmission_details
 from django.core.validators import FileExtensionValidator
 
 
+
 # Create your models here.
 class certificate(models.Model):
     date=models.DateField()
