@@ -27,5 +27,10 @@ def get_fees(request, course_id):
         course = course_master.objects.get(pk=course_id);
         return JsonResponse({'fees': course.fees});
 
+def get_course_chart_data(request):
+    course=course_master.objects.all()
+    label=[c.name for c in course]
+    data=[c.duration for c in course]
 
+    return JsonResponse({'data':data,'label':label})
 
