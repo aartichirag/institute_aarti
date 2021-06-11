@@ -34,3 +34,11 @@ def get_course_chart_data(request):
 
     return JsonResponse({'data':data,'label':label})
 
+def get_course_fees_chart_data(request):
+    course=course_master.objects.all()
+    label=[c.name for c in course]
+    data=[c.fees for c in course]
+
+    return JsonResponse({'data':data,'label':label})
+
+
