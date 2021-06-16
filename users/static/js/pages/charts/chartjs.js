@@ -1,6 +1,6 @@
 $(function () {
   //  new Chart(document.getElementById("line_chart").getContext("2d"), getChartJs('line'));
-    fetch("http://127.0.0.1:8000/course/get_course_chart")
+   fetch("http://127.0.0.1:8000/course/get_course_chart")
     .then(response => response.json())
     .then(chart_data=>{
        config = {
@@ -23,32 +23,7 @@ $(function () {
      new Chart(document.getElementById("bar_chart").getContext("2d"),config);
     })
 
-    fetch("http://127.0.0.1:8000/course/get_course_fees_chart_data")
-    .then(response => response.json())
-    .then(chart_data=>{
-       config = {
-            type: 'bar',
-            data: {
-                labels: chart_data.label,
-                datasets: [{
-                    axis:'y',
-                    label: "My First dataset",
-                    data: chart_data.data,
-                    backgroundColor: 'rgba(0, 188, 212, 0.8)'
-                },{
-                    label: "My Second dataset",
-                    data: chart_data.data,
-                    backgroundColor: 'rgba(0, 188, 212, 0.8)'
-                }]
-            },
-            options: {
-                responsive: true,
-                legend: false,
-                indexAxis: 'y'
-            }
-        }
-     new Chart(document.getElementById("bar_chart").getContext("2d"),config);
-    })
+
     //new Chart(document.getElementById("bar_chart").getContext("2d"), getChartJs('bar'));
    // new Chart(document.getElementById("radar_chart").getContext("2d"), getChartJs('radar'));
    // new Chart(document.getElementById("pie_chart").getContext("2d"), getChartJs('pie'));
